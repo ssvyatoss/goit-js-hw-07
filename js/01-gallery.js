@@ -32,16 +32,21 @@ galleryListEl.addEventListener('click', ev => {
       <img src='${ev.target.dataset.source}'/>
     </div>
 `)
-window.addEventListener('keydown', event => {
-    if (event .code === 'Escape') {
-        instance.close();
-    }
-    console.log(event);
-});
+
+const onEscep =  event => {
+  if (event.code === 'Escape') {
+    instance.close();
+
+  }
+window.removeEventListener('keydown', onEscep);
+}
+
+window.addEventListener('keydown', onEscep);
 
 
 instance.show();
 });
+
 
 
 
